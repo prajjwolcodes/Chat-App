@@ -5,7 +5,7 @@ import conversationReducer from "./conversationSlice"
 const store = configureStore({
     reducer: {
         auth: authReducer,
-        convo: conversationReducer
+        convo: conversationReducer,
     }
 })
 

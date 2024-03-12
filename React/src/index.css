@@ -8,6 +8,10 @@
     width: 10px;
 }
 
+input {
+    padding-left: 8px;
+}
+
 ::-webkit-scrollbar-track {
     background: rgb(159, 159, 242);
 }
@@ -56,4 +60,19 @@
     60% {
         transform: translate3d(4px, 0, 0);
     }
+}
+
+
+@media (max-width: 450px) {
+
+    .hide-sidebar,
+    .hide-msg-container,
+    .hide-avatar {
+        display: none;
+    }
+
+    .responsive-signout-btn {
+        padding-right: 0;
+    }
+
 }

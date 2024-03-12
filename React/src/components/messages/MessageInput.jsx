@@ -35,7 +35,7 @@ const MessageInput = () => {
                     onChange={(e) => setMsg(e.target.value)}
                 />
                 <button type='submit' className='absolute inset-y-0 end-0 flex items-center pe-3'>
-                    <BsSend />
+                    <BsSend color="white" />
                 </button>
             </div>
         </form>

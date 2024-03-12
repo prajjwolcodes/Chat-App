@@ -6,7 +6,7 @@ import { GetMsg } from "../../redux/conversationSlice";
 
 const Messages = () => {
     const dispatch = useDispatch()
-    const { selectedConversation: selectedUser, messages } = useSelector(state => state.convo)
+    const { selectedConversation: selectedUser } = useSelector(state => state.convo)
 
     async function fetchMsg() {
         const res = await axios.get("http://localhost:3000/api/get/" + selectedUser._id, {

@@ -20,7 +20,7 @@ const Conversations = () => {
     }, [])
     return (
         <div className='py-2 flex flex-col overflow-auto hello'>
-            {registeredUsers.map(users => {
+            {registeredUsers?.map(users => {
                 return (
                     <Conversation key={users._id} user={users} />
                 )

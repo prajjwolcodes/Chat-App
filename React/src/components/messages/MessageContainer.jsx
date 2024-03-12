@@ -1,18 +1,22 @@
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import MessageInput from "./MessageInput";
 import Messages from "./Messages";
 import { TiMessages } from "react-icons/ti";
+import { IoArrowBack } from "react-icons/io5";
+import { unSelectConversation } from "../../redux/conversationSlice";
+
 
 const MessageContainer = () => {
+    const dispatch = useDispatch()
     const { selectedConversation: selectedUser } = useSelector(state => state.convo)
     const { user } = useSelector(state => state.auth)
     return (
-        <div className='w-full flex flex-col'>
+        <div className={`w-full flex flex-col ${selectedUser ? "" : "hide-msg-container w-full"}`}>
             {
                 selectedUser ? <>
                     {/* Header */}
-                    <div className='bg-indigo-400 px-4 py-2 mb-2'>
-                        <span className='label-text'></span> <span className='text-gray-900 font-bold'>{selectedUser.fullName}</span>
+                    <div className='bg-indigo-400 px-2 py-2 mb-2'>
+                        <span className='label-text'></span> <span className='text-gray-900 text-lg flex items-center gap-2 font-bold'><button className="text-lg" onClick={() => dispatch(unSelectConversation())}><IoArrowBack size={25} /></button> {selectedUser.fullName}</span>
                     </div>
 
                     <Messages />
