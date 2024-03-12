@@ -26,11 +26,11 @@ app.use("/api/auth", authRoutes)
 app.use("/api", messageRoutes)
 app.use("/api", userRoutes)
 
-// app.use(express.static(path.join(__dirname, "/React/dist")));
+app.use(express.static(path.join(__dirname, "/React/dist")));
 
-// app.get("*", (req, res) => {
-//     res.sendFile(path.join(__dirname, "react", "dist", "index.html"));
-// });
+app.get("*", (req, res) => {
+    res.sendFile(path.join(__dirname, "React", "dist", "index.html"));
+});
 
 const PORT = process.env.PORT
 
