@@ -65,7 +65,10 @@ input {
 
 @media (max-width: 450px) {
 
-    .hide-sidebar,
+    .hide-sidebar {
+        display: none;
+    }
+
     .hide-msg-container,
     .hide-avatar {
         display: none;

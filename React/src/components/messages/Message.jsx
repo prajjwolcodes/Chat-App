@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react'
 import { useSelector } from 'react-redux'
-import { getHourAndSecond } from '../../utils/fromatTime'
+import { extractTime } from '../../utils/fromatTime'
 
 const Message = () => {
     const { selectedConversation, messages } = useSelector(state => state.convo)
@@ -24,7 +24,7 @@ const Message = () => {
                         const chatSide = isMsgFromMe ? "chat-end" : "chat-start"
                         const bubbleBgColor = isMsgFromMe ? "bg-blue-500" : "bg-brown-300"
                         const chatProfilePic = isMsgFromMe ? user.profilePic : selectedConversation.profilePic
-                        const { hour, second } = getHourAndSecond(msg.createdAt)
+                        const time = extractTime(msg.createdAt)
                         return (
                             <div className={`chat ${chatSide}`} key={msg._id}>
                                 <div className='chat-image avatar'>
@@ -33,7 +33,7 @@ const Message = () => {
                                     </div>
                                 </div>
                                 <div className={`chat-bubble text-white ${bubbleBgColor}`}>{msg.message}</div>
-                                <div className='chat-footer opacity-70 text-xs flex gap-1 items-center'>{hour}:{second}</div>
+                                <div className='chat-footer opacity-70 text-xs flex gap-1 items-center'>{time}</div>
                                 <div ref={lastMsgRef}></div>
                             </div>
                         )

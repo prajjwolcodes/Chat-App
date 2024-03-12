@@ -16,16 +16,17 @@ export const sendMessage = async (req, res) => {
         await Conversation.create({
             participants: [senderId, recieverId]
         })
+        return
     }
-
     const newMessage = await Message.create({
         senderId, recieverId, message
     })
-    if (newMessage) {
-        conversation?.messages.push(newMessage._id)
+
+    if (newMessage && conversation) {
+        conversation.messages.push(newMessage._id)
+        await conversation.save()
     }
 
-    await conversation?.save()
     res.status(200).json(newMessage)
 }
 
