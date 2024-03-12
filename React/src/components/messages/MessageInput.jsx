@@ -16,7 +16,7 @@ const MessageInput = () => {
         const { message } = msg
         if (!message)
             return
-        const res = await axios.post("http://localhost:3000/api/send/" + selectedUser._id, msg, {
+        const res = await axios.post("/api/send/" + selectedUser._id, msg, {
             withCredentials: true
         })
         setMsg("")

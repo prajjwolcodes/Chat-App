@@ -11,7 +11,7 @@ const Navbar = () => {
     const navigate = useNavigate()
 
     async function handleLogout() {
-        const res = await axios.post("http://localhost:3000/api/auth/logout", {
+        const res = await axios.post("/api/auth/logout", {
             withCredentials: true
         })
         toast.success(res.data.message)

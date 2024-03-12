@@ -8,7 +8,7 @@ const Conversations = () => {
     const dispatch = useDispatch()
     const [registeredUsers, setUser] = useState([])
     async function fetchUser() {
-        const res = await axios.get("http://localhost:3000/api/users", {
+        const res = await axios.get("/api/users", {
             withCredentials: true
         })
         setUser(res.data)

@@ -13,7 +13,7 @@ const useLoginUser = () => {
             return
         }
         try {
-            const res = await axios.post("http://localhost:3000/api/auth/login", userData, {
+            const res = await axios.post("/api/auth/login", userData, {
                 withCredentials: true
             })
             toast.success("Succesfully Logged In")

@@ -9,7 +9,7 @@ const Messages = () => {
     const { selectedConversation: selectedUser } = useSelector(state => state.convo)
 
     async function fetchMsg() {
-        const res = await axios.get("http://localhost:3000/api/get/" + selectedUser._id, {
+        const res = await axios.get("/api/get/" + selectedUser._id, {
             withCredentials: true
         })
         dispatch(GetMsg(res.data))

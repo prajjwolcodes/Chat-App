@@ -13,7 +13,7 @@ const useSignupUser = () => {
 
         setLoading(true)
         try {
-            const res = await axios.post("http://localhost:3000/api/auth/signup", userData)
+            const res = await axios.post("/api/auth/signup", userData)
             toast.success("Succesfully Signed Up")
             localStorage.setItem("chat-user", JSON.stringify(res.data))
             dispatch(signUp(res.data))
