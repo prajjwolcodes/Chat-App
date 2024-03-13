@@ -4,7 +4,7 @@
 
 
 /* dark mode looking scrollbar */
-body,input,nav{
+body,input,nav,html{
     background-color:white;
 }
 .hello::-webkit-scrollbar {
