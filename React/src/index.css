@@ -4,6 +4,9 @@
 
 
 /* dark mode looking scrollbar */
+body{
+    background-color:white;
+}
 .hello::-webkit-scrollbar {
     width: 10px;
 }
